@@ -158,6 +158,20 @@ table.data td.fig{font-family:var(--mono);font-size:.84rem;font-weight:600;white
 .band .stat b{color:var(--runway)}
 .stat span{display:block;font-size:.88rem;margin-top:8px;line-height:1.35}
 
+.bnwrap{display:flex;flex-direction:column;align-items:center;gap:10px}
+.bnwrap .eg-affiliate-banners{display:block;margin:0 auto;overflow:hidden}
+.bn-medium-rectangle .eg-affiliate-banners{width:300px;height:250px}
+.bn-wide-skyscraper .eg-affiliate-banners{width:160px;height:600px}
+.bn-label{font-family:var(--mono);font-size:.53rem;letter-spacing:.2em;text-transform:uppercase;color:var(--grey)}
+.band .bn-label{color:rgba(255,255,255,.6)}
+.bn-note{font-family:var(--mono);font-size:.56rem;letter-spacing:.05em;color:var(--grey);
+  margin:0;text-align:center;max-width:34ch;line-height:1.7}
+.band .bn-note{color:rgba(255,255,255,.55)}
+.bnrow{padding:34px 0;background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.band .bnrow{background:transparent;border-color:rgba(255,255,255,.14)}
+/* the 160x600 is a sidebar unit; it has no place on a narrow screen */
+@media(max-width:1024px){.bn-wide-skyscraper{display:none}}
+
 /* ---------- boarding-pass calculator ---------- */
 .calc{background:var(--white);border:1px solid var(--line);border-radius:6px;overflow:hidden;
   box-shadow:0 2px 0 rgba(34,37,43,.06);color:var(--ink)}
@@ -446,6 +460,7 @@ footer li{margin-bottom:9px;line-height:1.4}
     </div>
   </div>
 </section>
+<div class="bnrow"><div class="wrap"><div class="bnwrap  bn-medium-rectangle"><span class="bn-label">Advertisement</span><div class="eg-affiliate-banners" data-program="us-expedia" data-network="pz" data-layout="medium-rectangle" data-image="sailing" data-message="bye-bye-bucket-list-hello-adventure" data-camref="1100l5QSrc" data-pubref="fhp-home-rect-wins" data-link="packages"></div><p class="bn-note">Links to Expedia vacation packages. We may earn a commission on qualifying bookings.</p></div></div></div>
 <div class="wgwrap">
   <div class="wg">
     <span class="wg-label">Flights only</span><h2 class="wg-h">Pricing the flight on its own?</h2>
@@ -774,6 +789,7 @@ footer li{margin-bottom:9px;line-height:1.4}
         <p>Fifteen questions people actually ask, answered without steering every one back toward a booking button.</p>
         <p>Where figures come from third-party research, the source is named. Where the honest answer is that it depends, we say what it depends on rather than inventing a number.</p>
         <p style="margin-top:22px"><a class="btn" href="#search">Back to search</a></p>
+        <div style="margin-top:34px"><div class="bnwrap  bn-wide-skyscraper"><span class="bn-label">Advertisement</span><div class="eg-affiliate-banners" data-program="us-expedia" data-network="pz" data-layout="wide-skyscraper" data-image="resort" data-message="find-perfect-getaway-package" data-camref="1100l5QSrc" data-pubref="fhp-home-sky-faq" data-link="packages"></div></div></div>
       </div>
       <div>
         <details><summary>Is it cheaper to book a flight and hotel together?</summary><div class="ans"><p>Often, but not always, and the difference is worth checking rather than assuming. Bundles can undercut separate booking because hotels supply discounted rates to package sellers under contracts that forbid publishing those rates publicly — the rate only becomes visible once it is bundled with a flight. That mechanism is real and it is why packages can beat the price you see on a hotel&#x27;s own website. It breaks down when you would have used airline points, when the cheapest flight is on a carrier the package seller does not sell, or when local accommodation is cheap and easy to book directly.</p></div></details>
@@ -1010,5 +1026,6 @@ mobnav.addEventListener('click',function(e){
 
 </script>
 <script class="eg-widgets-script" src="https://creator.expediagroup.com/products/widgets/assets/eg-widgets.js"></script>
+<script class="eg-affiliate-banners-script" src="https://creator.expediagroup.com/products/banners/assets/eg-affiliate-banners.js"></script>
 </body>
 </html>
