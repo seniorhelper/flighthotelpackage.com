@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Best Time to Book Vacation Packages | What the Data Actually Says</title>
+<meta name="description" content="Flights get cheaper further out. Hotels get cheaper closer in. A package makes you buy both at once. The booking windows, the source disagreements, and a tool that gives you your own book-by date.">
+<link rel="canonical" href="https://flighthotelpackage.com/best-time-to-book-vacation-packages/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#22252B">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Flight Hotel Package">
+<meta property="og:title" content="Best Time to Book Vacation Packages | What the Data Actually Says">
+<meta property="og:description" content="Flights get cheaper further out. Hotels get cheaper closer in. A package makes you buy both at once. The booking windows, the source disagreements, and a tool that gives you your own book-by date.">
+<meta property="og:url" content="https://flighthotelpackage.com/best-time-to-book-vacation-packages/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%2322252B'/><path d='M5 18 L27 11 L24 17 L11 21 Z' fill='%23F2C230'/><rect x='7' y='24' width='18' height='2.4' rx='1' fill='%232E6E9E'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://creator.expediagroup.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#22252B; --ink-2:#2E323A; --bone:#FAF8F4; --white:#fff;
+  --runway:#F2C230; --sky:#2E6E9E; --sky-deep:#1D4C70; --coral:#D9553B;
+  --grey:#6B7280; --line:rgba(34,37,43,.14); --line-soft:rgba(34,37,43,.07);
+  --disp:'Sora',system-ui,sans-serif;
+  --body:'Source Serif 4',Georgia,serif;
+  --mono:'IBM Plex Mono',monospace;
+  --wrap:1160px; --hdr:0px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bone);color:var(--ink);
+  font-family:var(--body);font-size:18px;line-height:1.68;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:var(--sky-deep);text-underline-offset:3px}
+a:hover{color:var(--coral)}
+:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+h1,h2,h3,h4{font-family:var(--disp);font-weight:700;line-height:1.12;letter-spacing:-.028em;margin:0 0 .5em}
+h1{font-size:clamp(2.3rem,5.4vw,3.9rem);letter-spacing:-.04em}
+h2{font-size:clamp(1.75rem,3.3vw,2.5rem);margin-top:0}
+h3{font-size:clamp(1.18rem,2vw,1.42rem);font-weight:600}
+h4{font-size:1.04rem;font-weight:600}
+p{margin:0 0 1.1em}
+.lede{font-size:clamp(1.08rem,1.9vw,1.28rem);line-height:1.55}
+.eyebrow{font-family:var(--mono);font-size:.62rem;font-weight:600;letter-spacing:.19em;
+  text-transform:uppercase;color:var(--sky-deep);display:block;margin-bottom:.9em}
+.eyebrow.on-dark{color:var(--runway)}
+
+/* chrome */
+.util{background:var(--ink);color:var(--bone);font-family:var(--mono);font-size:.6rem;letter-spacing:.08em}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;min-height:34px;flex-wrap:wrap}
+.util a{color:var(--runway);text-decoration:none}
+.util a:hover{text-decoration:underline}
+.hdr{position:sticky;top:0;z-index:60;background:var(--white);border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:70px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);flex-shrink:0}
+.brand svg{display:block;width:38px;height:38px;flex-shrink:0}
+.brand-tx{font-family:var(--disp);font-weight:700;font-size:1.06rem;letter-spacing:-.04em;line-height:1.05}
+.brand-tx span{display:block;font-family:var(--mono);font-size:.5rem;font-weight:400;letter-spacing:.15em;
+  color:var(--grey);text-transform:uppercase;margin-top:3px}
+.nav{display:flex;gap:15px;align-items:center;white-space:nowrap}
+.nav a{font-family:var(--disp);font-weight:600;font-size:.84rem;text-decoration:none;color:var(--ink);white-space:nowrap}
+.nav a:hover,.nav a[aria-current]{color:var(--coral)}
+.hdr-right{display:flex;align-items:center;gap:12px}
+.navaff{font-family:var(--disp);font-weight:600;font-size:.82rem;text-decoration:none;color:var(--ink);
+  border:1px solid var(--line);padding:9px 13px;border-radius:3px;white-space:nowrap}
+.navaff:hover{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.hdr .btn{white-space:nowrap;font-size:.86rem;padding:10px 16px}
+.navaff span{font-size:.72em;margin-left:4px;opacity:.7}
+.btn{display:inline-block;font-family:var(--disp);font-weight:700;font-size:.92rem;background:var(--sky-deep);
+  color:var(--white);padding:11px 20px;border-radius:3px;text-decoration:none;border:none;cursor:pointer}
+.btn:hover{background:var(--coral);color:var(--white)}
+.btn-runway{background:var(--runway);color:var(--ink)}
+.btn-runway:hover{background:var(--ink);color:var(--runway)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{background:var(--ink);color:var(--white)}
+.burger{display:none;background:none;border:1px solid var(--line);width:44px;height:40px;cursor:pointer;
+  align-items:center;justify-content:center;flex-direction:column;gap:4px;border-radius:3px}
+.burger span{display:block;width:19px;height:2px;background:var(--ink)}
+.mobnav{display:none;position:fixed;left:0;right:0;top:var(--hdr);bottom:0;z-index:55;background:var(--white);
+  overflow-y:auto;padding:24px 24px 60px}
+.mobnav.open{display:block}
+.mobnav a{display:block;font-family:var(--disp);font-weight:600;font-size:1.15rem;padding:14px 0;
+  border-bottom:1px solid var(--line-soft);text-decoration:none;color:var(--ink)}
+.mobnav .mob-cta{background:var(--runway);color:var(--ink);text-align:center;border-radius:3px;
+  margin-top:16px;border-bottom:none;font-family:var(--disp);font-weight:700}
+
+.aistrip{background:var(--ink);color:var(--bone);padding:20px 0}
+.aistrip .wrap{display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
+.aistrip .tag{font-family:var(--mono);font-size:.56rem;letter-spacing:.17em;color:var(--runway);
+  text-transform:uppercase;padding-top:5px;flex-shrink:0}
+.aistrip p{margin:0;font-size:1rem;line-height:1.55;flex:1;min-width:260px}
+
+/* ---------- Expedia widget frame ---------- */
+.wgwrap{background:var(--ink);padding:34px 0 40px}
+.wgwrap.light{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.wg{max-width:var(--wrap);margin:0 auto;padding:0 24px;text-align:center}
+.wg-label{display:block;font-family:var(--mono);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--runway);margin-bottom:12px}
+.wgwrap.light .wg-label{color:var(--sky-deep)}
+.wg-h{font-size:clamp(1.4rem,2.8vw,2rem);color:var(--white);margin-bottom:.6em}
+.wgwrap.light .wg-h{color:var(--ink)}
+.wg .eg-widget{margin:0 auto;max-width:960px;text-align:left;min-height:190px}
+@media(max-width:768px){.wg .eg-widget{min-height:340px}}
+.wg-note{font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;color:rgba(255,255,255,.62);
+  margin:16px auto 0;max-width:70ch;line-height:1.7}
+.wgwrap.light .wg-note{color:var(--grey)}
+.wg-note a{color:var(--runway)}
+.wgwrap.light .wg-note a{color:var(--sky-deep)}
+
+section{padding:58px 0}
+.band{background:var(--ink);color:var(--bone)}
+.band h2,.band h3,.band h4{color:var(--white)}
+.band a{color:var(--runway)}
+.band a.btn{color:var(--white)}
+.band a.btn-runway{color:var(--ink)}
+.band-soft{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cols2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px}
+.cols3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px}
+.narrow{max-width:68ch}
+
+.answer{border-left:4px solid var(--runway);background:var(--white);padding:20px 24px;margin:0 0 28px;font-size:1.02rem}
+.band .answer{background:rgba(255,255,255,.06)}
+.answer p:last-child{margin-bottom:0}
+.answer .q{font-family:var(--disp);font-weight:700;font-size:1.08rem;display:block;margin-bottom:.45em;letter-spacing:-.022em}
+
+table.data{width:100%;border-collapse:collapse;font-size:.93rem;margin:0 0 12px}
+table.data caption{text-align:left;font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--sky-deep);padding-bottom:11px}
+table.data th{font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;
+  text-align:left;border-bottom:2px solid var(--ink);padding:9px 12px 9px 0;font-weight:400;color:var(--grey)}
+table.data td{padding:11px 12px 11px 0;border-bottom:1px solid var(--line-soft);vertical-align:top}
+table.data td.fig{font-family:var(--mono);font-size:.84rem;font-weight:600;white-space:nowrap}
+.band table.data caption{color:var(--runway)}
+.band table.data th{color:var(--runway);border-bottom-color:var(--runway)}
+.band table.data td{border-bottom-color:rgba(255,255,255,.14)}
+
+.card{background:var(--white);border:1px solid var(--line);padding:24px}
+.band .card{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.16)}
+.card .kv{font-family:var(--mono);font-size:.57rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--sky-deep);display:block;margin-bottom:.7em}
+.band .card .kv{color:var(--runway)}
+.card p:last-child{margin-bottom:0}
+.card.win{border-top:4px solid var(--sky)}
+.card.lose{border-top:4px solid var(--coral)}
+
+.src{font-family:var(--mono);font-size:.57rem;letter-spacing:.05em;color:var(--grey);display:block;margin-top:10px;line-height:1.7}
+.band .src{color:rgba(255,255,255,.6)}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:20px;margin:26px 0}
+.stat b{display:block;font-family:var(--disp);font-weight:700;font-size:clamp(1.8rem,4vw,2.6rem);
+  letter-spacing:-.045em;line-height:1;color:var(--sky-deep)}
+.band .stat b{color:var(--runway)}
+.stat span{display:block;font-size:.88rem;margin-top:8px;line-height:1.35}
+
+.bnwrap{display:flex;flex-direction:column;align-items:center;gap:10px}
+.bnwrap .eg-affiliate-banners{display:block;margin:0 auto;overflow:hidden}
+.bn-medium-rectangle .eg-affiliate-banners{width:300px;height:250px}
+.bn-wide-skyscraper .eg-affiliate-banners{width:160px;height:600px}
+.bn-label{font-family:var(--mono);font-size:.53rem;letter-spacing:.2em;text-transform:uppercase;color:var(--grey)}
+.band .bn-label{color:rgba(255,255,255,.6)}
+.bn-note{font-family:var(--mono);font-size:.56rem;letter-spacing:.05em;color:var(--grey);
+  margin:0;text-align:center;max-width:34ch;line-height:1.7}
+.band .bn-note{color:rgba(255,255,255,.55)}
+.bnrow{padding:34px 0;background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.band .bnrow{background:transparent;border-color:rgba(255,255,255,.14)}
+/* the 160x600 is a sidebar unit; it has no place on a narrow screen */
+@media(max-width:1024px){.bn-wide-skyscraper{display:none}}
+
+/* ---------- boarding-pass calculator ---------- */
+.calc{background:var(--white);border:1px solid var(--line);border-radius:6px;overflow:hidden;
+  box-shadow:0 2px 0 rgba(34,37,43,.06);color:var(--ink)}
+.band .calc,.band .calc p,.band .calc small,.band .calc label{color:var(--ink)}
+.band .calc .src,.band .calc small{color:var(--grey)}
+.band .calc .cfield label{color:var(--grey)}
+.band .calc-head strong{color:var(--white)}
+.calc-head{background:var(--ink);color:var(--white);padding:20px 26px;display:flex;
+  justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.calc-head strong{font-family:var(--disp);font-weight:700;font-size:1.15rem;letter-spacing:-.02em}
+.calc-head span{font-family:var(--mono);font-size:.55rem;letter-spacing:.18em;color:var(--runway);text-transform:uppercase}
+.calc-body{padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.calc-body .full{grid-column:1/-1}
+.cfield label{display:block;font-family:var(--mono);font-size:.56rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--grey);margin-bottom:6px}
+.cfield input{width:100%;padding:12px 13px;border:1px solid var(--line);background:var(--bone);
+  font-family:var(--mono);font-size:1.05rem;color:var(--ink);border-radius:3px}
+.cfield input:focus{border-color:var(--sky);outline:none;background:var(--white)}
+.cfield small{display:block;font-size:.78rem;color:var(--grey);margin-top:5px;font-family:var(--body)}
+.calc-out{border-top:2px dashed var(--line);padding:24px 26px;background:var(--bone)}
+.calc-verdict{font-family:var(--disp);font-weight:700;font-size:clamp(1.3rem,3vw,1.9rem);
+  letter-spacing:-.03em;margin-bottom:.4em}
+.calc-verdict.good{color:var(--sky-deep)}
+.calc-verdict.bad{color:var(--coral)}
+.calc-verdict.even{color:var(--ink)}
+.calc-detail{font-size:.98rem;margin-bottom:0;color:var(--ink)}
+.calc-detail strong{color:var(--ink)}
+.calc-bars{margin:18px 0 0}
+.cbar{display:flex;align-items:center;gap:12px;margin-bottom:9px;font-family:var(--mono);font-size:.66rem}
+.cbar s{text-decoration:none;width:96px;flex-shrink:0;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.cbar u{text-decoration:none;height:16px;border-radius:2px;display:block;min-width:2px}
+.cbar.pkg u{background:var(--sky)}
+.cbar.sep u{background:var(--runway)}
+.cbar b{font-size:.8rem;white-space:nowrap}
+
+/* price curve */
+.curve{display:block;width:100%;height:auto;background:var(--white);border:1px solid var(--line)}
+
+details{border-bottom:1px solid var(--line);padding:0}
+details summary{cursor:pointer;padding:18px 40px 18px 0;position:relative;list-style:none;
+  font-family:var(--disp);font-weight:600;font-size:1.03rem}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";position:absolute;right:8px;top:50%;transform:translateY(-50%);
+  font-family:var(--mono);font-size:1.2rem;color:var(--sky-deep)}
+details[open] summary::after{content:"\2212"}
+details .ans{padding:0 40px 20px 0}
+details .ans p:last-child{margin-bottom:0}
+
+footer{background:var(--ink);color:var(--bone);padding:56px 0 30px;font-size:.89rem}
+footer h4{font-family:var(--mono);font-size:.57rem;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:400;color:var(--runway);margin-bottom:1.1em}
+footer a{color:var(--bone);text-decoration:none}
+footer a:hover{color:var(--runway);text-decoration:underline}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin-bottom:9px;line-height:1.4}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:34px;margin-bottom:40px}
+.fbase{border-top:1px solid rgba(255,255,255,.16);padding-top:24px;display:flex;justify-content:space-between;
+  gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:.58rem;letter-spacing:.08em}
+.disclose{font-family:var(--mono);font-size:.56rem;letter-spacing:.05em;color:rgba(255,255,255,.58);
+  margin-top:18px;line-height:1.7;max-width:82ch}
+
+@media(max-width:1180px){
+  .nav{display:none}
+  .hdr-right{display:none}
+  .burger{display:flex}
+}
+@media(max-width:768px){
+  body{font-size:17px}
+  .nav{display:none}
+  .hdr-right{display:none}
+  .burger{display:flex}
+  section{padding:42px 0}
+  .calc-body{grid-template-columns:1fr}
+  .cbar s{width:70px;font-size:.58rem}
+}
+@media(max-width:430px){.wrap{padding:0 17px}.wg{padding:0 14px}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+</style>
+<style>
+/* ---------- animated dual curve ---------- */
+.curvewrap{background:var(--white);border:1px solid var(--line);padding:26px 22px 20px;margin-top:26px}
+.band .curvewrap{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.18)}
+.curvewrap svg{display:block;width:100%;height:auto}
+.cv-line{fill:none;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
+.cv-flight{stroke:var(--sky)}
+.cv-hotel{stroke:var(--runway)}
+.cv-draw{stroke-dasharray:1400;stroke-dashoffset:1400}
+.curvewrap.go .cv-draw{animation:draw 1.8s cubic-bezier(.4,0,.2,1) forwards}
+.curvewrap.go .cv-hotel.cv-draw{animation-delay:.5s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.cv-band{fill:var(--sky);opacity:0}
+.curvewrap.go .cv-band{animation:fadein .7s ease 1.6s forwards}
+@keyframes fadein{to{opacity:.1}}
+.cv-ax{stroke:rgba(34,37,43,.18);stroke-width:1}
+.band .cv-ax{stroke:rgba(255,255,255,.22)}
+.cv-t{font-family:var(--mono);font-size:11px;fill:var(--grey)}
+.band .cv-t{fill:rgba(255,255,255,.62)}
+.cv-key{font-family:var(--mono);font-size:12px;font-weight:700}
+.cv-legend{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-top:14px;
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.09em;text-transform:uppercase}
+.cv-legend span{display:flex;align-items:center;gap:7px}
+.cv-legend i{width:18px;height:3px;border-radius:2px;display:block}
+@media(prefers-reduced-motion:reduce){
+  .cv-draw{stroke-dashoffset:0!important;animation:none!important}
+  .cv-band{opacity:.1!important;animation:none!important}
+}
+
+/* ---------- booking window finder ---------- */
+.finder{background:var(--white);border:1px solid var(--line);border-radius:6px;overflow:hidden;color:var(--ink)}
+.band .finder,.band .finder p,.band .finder label{color:var(--ink)}
+.finder-head{background:var(--ink);color:var(--white);padding:18px 24px;
+  font-family:var(--disp);font-weight:700;font-size:1.12rem;letter-spacing:-.02em}
+.band .finder-head{color:var(--white)}
+.finder-body{padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.finder-body .full{grid-column:1/-1}
+.ffield label{display:block;font-family:var(--mono);font-size:.55rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--grey);margin-bottom:7px}
+.band .ffield label{color:var(--grey)}
+.ffield select,.ffield input{width:100%;padding:12px 13px;border:1px solid var(--line);background:var(--bone);
+  font-family:var(--body);font-size:1rem;color:var(--ink);border-radius:3px}
+.ffield select:focus,.ffield input:focus{border-color:var(--sky);outline:none;background:var(--white)}
+.finder-out{border-top:2px dashed var(--line);padding:24px;background:var(--bone)}
+.fo-window{font-family:var(--disp);font-weight:700;font-size:clamp(1.2rem,2.8vw,1.7rem);
+  letter-spacing:-.03em;margin-bottom:.35em;color:var(--sky-deep)}
+.fo-dates{font-family:var(--mono);font-size:.92rem;font-weight:700;margin-bottom:14px;color:var(--ink)}
+.fo-note{font-size:.95rem;margin:0;color:var(--ink)}
+.fo-bar{height:26px;background:rgba(34,37,43,.08);border-radius:3px;position:relative;margin:16px 0 8px;overflow:hidden}
+.fo-bar i{position:absolute;top:0;bottom:0;background:var(--sky);opacity:.85;border-radius:3px}
+.fo-bar u{position:absolute;top:0;bottom:0;width:2px;background:var(--coral);text-decoration:none}
+.fo-scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.53rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--grey)}
+@media(max-width:768px){.finder-body{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="util">
+  <div class="wrap">
+    <span>FLIGHT + HOTEL PACKAGES &nbsp;/&nbsp; SEARCH POWERED BY EXPEDIA</span>
+    <span><a href="https://expedia.com/affiliates/eyetoad/home" target="_blank" rel="sponsored noopener">GO TO EXPEDIA &rarr;</a></span>
+  </div>
+</div>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Flight Hotel Package home">
+      <svg viewBox="0 0 48 48" role="img" aria-label="Flight Hotel Package">
+        <rect width="48" height="48" rx="5" fill="#22252B"/>
+        <path d="M7 27 L41 16 L36 26 L16 32 Z" fill="#F2C230"/>
+        <rect x="10" y="36" width="28" height="3.4" rx="1.7" fill="#2E6E9E"/>
+      </svg>
+      <span class="brand-tx">Flight Hotel Package<span>Compare before you book</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/when-to-book-flight-and-hotel-together/">When bundling wins</a>
+      <a href="/how-to-book-flight-and-hotel-package/">How to book</a>
+      <a href="/all-inclusive-vs-flight-hotel-package/">All-inclusive</a>
+      <a href="/best-time-to-book-vacation-packages/" aria-current="page">Best time to book</a>
+    </nav>
+    <div class="hdr-right">
+      <a class="navaff" href="https://expedia.com/affiliates/eyetoad/home" target="_blank" rel="sponsored noopener">Expedia<span>&#8599;</span></a>
+      <a class="btn btn-runway" href="#search">Search packages</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobnav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobnav" id="mobnav">
+  <a href="/">Home</a>
+  <a href="/when-to-book-flight-and-hotel-together/">When bundling actually saves money</a>
+  <a href="/how-to-book-flight-and-hotel-package/">How to book a package</a>
+  <a href="/all-inclusive-vs-flight-hotel-package/">All-inclusive vs build your own</a>
+  <a href="/best-time-to-book-vacation-packages/" aria-current="page">The best time to book</a>
+  <a href="https://expedia.com/affiliates/eyetoad/home" target="_blank" rel="sponsored noopener">Go to Expedia &#8599;</a>
+  <a class="mob-cta" href="#search">Search packages</a>
+</div>
+
+<div class="aistrip">
+  <div class="wrap">
+    <span class="tag">Short answer</span>
+    <p>Book a domestic vacation package roughly four to eight weeks before departure, and an international one three to five months ahead. Those ranges are where the guidance from Google Flights, Expedia and Going overlaps. The complication specific to packages is that the two halves move in opposite directions: airfare tends to reach its low point around five to six weeks out, while Hotels.com's 2026 Hotel Price Index puts the hotel sweet spot at just 8 to 14 days before travel. A package forces you to buy both at the same moment, so you cannot optimise both &mdash; and the flight, being the less flexible and more steeply rising component, is the one to time.</p>
+  </div>
+</div>
+<section style="padding:46px 0 22px">
+  <div class="wrap">
+    <span class="eyebrow">Timing</span>
+    <h1 style="max-width:22ch">Flights get cheaper further out. Hotels get cheaper closer in.</h1>
+    <p class="lede narrow">A package makes you buy both at the same moment. That is the whole problem, and almost nobody writing about booking windows acknowledges it exists.</p>
+  </div>
+</section>
+
+<section class="band" id="tension">
+  <div class="wrap">
+    <span class="eyebrow on-dark">The finding this page is built on</span>
+    <h2>The two halves of your trip peak at different times.</h2>
+
+    <div class="answer">
+      <span class="q">Do flights and hotels have the same best booking time?</span>
+      <p>No, and they are close to opposites. Airfare generally falls until roughly five to six weeks before departure and then climbs steeply as the cheap fare buckets sell out. Hotel rates frequently do the reverse: Hotels.com's 2026 Hotel Price Index identifies 8 to 14 days before travel as the value sweet spot, and NerdWallet's analysis of more than 2,500 room rates found that booking 15 days out beat booking four months out 66% of the time, with rooms averaging 13% less.</p>
+    </div>
+
+    <div class="curvewrap" id="curve">
+      <svg viewBox="0 0 900 420" role="img" aria-labelledby="cvT cvD">
+        <title id="cvT">Airfare and hotel rates move in opposite directions as departure approaches</title>
+        <desc id="cvD">Two curves plotted against days before departure. Airfare declines from a high at 300 days to a low around 40 days, then rises steeply. Hotel rates decline gradually and continue falling into the final two weeks. The shaded band marks the four-to-eight-week package window.</desc>
+
+        <rect x="70" y="20" width="800" height="330" fill="none"/>
+        <line class="cv-ax" x1="70" y1="350" x2="870" y2="350"/>
+        <line class="cv-ax" x1="70" y1="20" x2="70" y2="350"/>
+
+        <!-- the package window band -->
+        <rect class="cv-band" x="600" y="20" width="120" height="330"/>
+        <text class="cv-t" x="660" y="42" text-anchor="middle">PACKAGE WINDOW</text>
+        <text class="cv-t" x="660" y="58" text-anchor="middle">4&ndash;8 WEEKS</text>
+
+        <!-- airfare: high, falls to a trough near 40 days, then spikes -->
+        <path class="cv-line cv-flight cv-draw"
+              d="M90 90 C 200 120, 300 160, 420 200 C 520 232, 590 258, 660 268 C 700 274, 730 272, 760 262 C 790 250, 810 218, 830 150 C 840 118, 848 96, 856 78"/>
+        <!-- hotel: gradual decline continuing into the final fortnight -->
+        <path class="cv-line cv-hotel cv-draw"
+              d="M90 150 C 220 158, 340 168, 460 182 C 560 194, 640 208, 710 224 C 770 238, 810 252, 856 276"/>
+
+        <text class="cv-key cv-t" x="120" y="82" fill="#2E6E9E">AIRFARE</text>
+        <text class="cv-key cv-t" x="120" y="142" fill="#F2C230">HOTEL RATE</text>
+
+        <text class="cv-t" x="90" y="374">300 DAYS</text>
+        <text class="cv-t" x="300" y="374" text-anchor="middle">150</text>
+        <text class="cv-t" x="500" y="374" text-anchor="middle">90</text>
+        <text class="cv-t" x="660" y="374" text-anchor="middle">40</text>
+        <text class="cv-t" x="790" y="374" text-anchor="middle">14</text>
+        <text class="cv-t" x="866" y="374" text-anchor="end">0</text>
+        <text class="cv-t" x="470" y="400" text-anchor="middle">DAYS BEFORE DEPARTURE</text>
+        <text class="cv-t" x="-185" y="46" transform="rotate(-90)" text-anchor="middle">RELATIVE PRICE</text>
+      </svg>
+      <div class="cv-legend">
+        <span><i style="background:#2E6E9E"></i>Airfare, falls then spikes</span>
+        <span><i style="background:#F2C230"></i>Hotel rate, keeps falling</span>
+      </div>
+    </div>
+    <p class="src">Illustrative shapes drawn from the published sources cited throughout this page, not from a price study of our own. The <em>directions</em> are what the data supports; the exact curvature is a drawing. Sources: Google Flights historical fare analysis as reported by The Points Guy, May 2026; Expedia 2026 Air Hacks Report; Hotels.com 2026 Hotel Price Index; NerdWallet hotel rate analysis; Going booking-window guidance.</p>
+
+    <div class="cols2" style="margin-top:34px">
+      <div>
+        <h3>Why airfare rises at the end</h3>
+        <p>Airlines sell seats in fare buckets, each with a fixed allocation. The cheapest buckets are small and sell first. As departure approaches and the cheap allocations empty, what remains is the expensive inventory the airline has deliberately held back for travellers with no choice &mdash; business travellers, people attending funerals, anyone who has to be somewhere on Thursday.</p>
+        <p>That structure means a sold-out cheap fare is gone permanently. There is no mechanism by which it comes back. It is why the final three weeks reliably cost more and why "waiting for a last-minute flight deal" is a losing strategy on most routes.</p>
+      </div>
+      <div>
+        <h3>Why hotel rates fall at the end</h3>
+        <p>A hotel room is the most perishable inventory in commerce. An unsold room tonight earns nothing tomorrow &mdash; it is not held back for a better customer, it simply expires. That gives hotels a strong incentive to discount as arrival approaches and rooms remain unsold.</p>
+        <p>The industry data reflects it. SiteMinder reported the global average hotel booking window at 32.15 days in 2025, far shorter than the flight equivalent, and Hotels.com places the value sweet spot at 8 to 14 days out. Hotels are running toward the deadline; airlines are running away from it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div id="search"></div>
+<div class="wgwrap">
+  <div class="wg">
+    <span class="wg-label">Check today&#x27;s prices</span><h2 class="wg-h">What is your trip costing right now?</h2>
+    <div class="eg-widget" data-widget="search" data-program="us-expedia" data-lobs="stays,flights"
+         data-network="pz" data-camref="1100l5QSrc" data-pubref="fhp-time-hero"></div>
+    <p class="wg-note">Timing guidance is only useful against a real number. Price it now, then decide whether to book or wait.</p>
+  </div>
+</div>
+<section id="paradox">
+  <div class="wrap">
+    <span class="eyebrow">The package paradox</span>
+    <h2>You cannot optimise both. So optimise the one that punishes you harder.</h2>
+
+    <div class="answer">
+      <span class="q">If flights and hotels peak at different times, when should I book the package?</span>
+      <p>Time the flight. Airfare rises more steeply and less recoverably near departure than hotel rates fall, and a sold-out fare bucket cannot be retrieved while an unsold room usually can. Booking in the flight window means accepting a hotel price slightly above its floor, which is the smaller loss. If your trip is genuinely flexible and the hotel is the dominant cost, book separately and time each half on its own schedule.</p>
+    </div>
+
+    <div class="cols2">
+      <div>
+        <p>Here is the trap in plain terms. Suppose you take the hotel advice literally and wait until twelve days before departure to book your package. You may well capture a good room rate. You will almost certainly pay a punishing airfare, because at twelve days out you are buying from the buckets airlines reserve for people with no alternative.</p>
+        <p>Now suppose you take the flight advice and book at six weeks. You get a reasonable fare. Your hotel rate is above its theoretical floor, because the property has not yet reached the point of discounting unsold rooms.</p>
+        <p>The second mistake is much cheaper than the first. Airfare in the final fortnight can be multiples of the same seat six weeks earlier. Hotel rates rarely move by anything like that proportion, and the wholesale rate inside a package partly insulates you from the difference anyway.</p>
+        <p>So the asymmetry decides it. <strong>Book packages on flight timing.</strong></p>
+      </div>
+      <div>
+        <h3>The three exceptions</h3>
+        <p><strong>All-inclusive resorts in peak season.</strong> These genuinely sell out, and the hotel-side logic reverses: waiting risks not getting the property at all. Treat peak-season all-inclusives like holiday flights and book three to five months ahead.</p>
+        <p><strong>Trips where the hotel dominates the cost.</strong> If accommodation is seventy percent of your total and the flight is short-haul and cheap, the arithmetic tilts back toward hotel timing &mdash; and toward booking separately so you can time each half independently.</p>
+        <p><strong>Genuinely flexible travellers.</strong> If you can move your dates by a week, that flexibility is worth more than any booking-window optimisation. Move the dates first, then worry about when to buy.</p>
+        <p class="src">This is our reasoning from the published sources, not a measurement. We have not run a fare study and do not present one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-soft" id="finder">
+  <div class="wrap">
+    <span class="eyebrow">Your own dates</span>
+    <h2>When should you book, specifically?</h2>
+    <p class="lede narrow">Enter your departure date and trip type. This applies the overlapping guidance from the published sources and gives you an actual window in calendar dates.</p>
+
+    <div class="finder" style="margin-top:26px">
+      <div class="finder-head">Booking window finder</div>
+      <div class="finder-body">
+        <div class="ffield">
+          <label for="dep">Departure date</label>
+          <input type="date" id="dep">
+        </div>
+        <div class="ffield">
+          <label for="trip">Trip type</label>
+          <select id="trip">
+            <option value="dom">Domestic US</option>
+            <option value="eur">International &mdash; Europe</option>
+            <option value="lat">International &mdash; Caribbean / Latin America</option>
+            <option value="asi">International &mdash; Asia</option>
+            <option value="anz">International &mdash; Australia / New Zealand</option>
+          </select>
+        </div>
+        <div class="ffield">
+          <label for="season">Season</label>
+          <select id="season">
+            <option value="off">Off or shoulder season</option>
+            <option value="peak">Peak season</option>
+            <option value="hol">Major holiday period</option>
+          </select>
+        </div>
+        <div class="ffield">
+          <label for="ptype">Accommodation</label>
+          <select id="ptype">
+            <option value="std">Standard hotel</option>
+            <option value="ai">All-inclusive resort</option>
+          </select>
+        </div>
+      </div>
+      <div class="finder-out">
+        <p class="fo-window" id="fow">Pick a departure date</p>
+        <p class="fo-dates" id="fod"></p>
+        <div class="fo-bar" id="fobar" hidden><i id="fobari"></i><u id="fobaru"></u></div>
+        <div class="fo-scale" id="foscale" hidden><span id="fos1">Window opens</span><span>Booking window in blue &middot; today in red</span><span>Departure</span></div>
+        <p class="fo-note" id="fon"></p>
+      </div>
+    </div>
+
+    <div class="answer" style="margin-top:30px">
+      <span class="q">How far in advance should I book a vacation package?</span>
+      <p>Four to eight weeks before departure for domestic trips and three to five months for international ones. Those are the ranges where the published guidance from Google Flights, Expedia and Going overlaps, which makes them the most defensible windows available given that the sources disagree with one another. Add roughly two months for peak season, and treat major holidays as needing three to five months domestically and four to ten months internationally.</p>
+    </div>
+  </div>
+</section>
+<div class="bnrow"><div class="wrap"><div class="bnwrap  bn-medium-rectangle"><span class="bn-label">Advertisement</span><div class="eg-affiliate-banners" data-program="us-expedia" data-network="pz" data-layout="medium-rectangle" data-image="sailing" data-message="bye-bye-bucket-list-hello-adventure" data-camref="1100l5QSrc" data-pubref="fhp-time-rect-finder" data-link="packages"></div><p class="bn-note">Links to Expedia vacation packages. We may earn a commission on qualifying bookings.</p></div></div></div>
+<section id="sources">
+  <div class="wrap">
+    <span class="eyebrow">The disagreement</span>
+    <h2>Three major datasets. Three different answers.</h2>
+    <p class="lede narrow">Most travel sites pick whichever window suits their argument and present it as settled. It is not settled, and the disagreement is more useful than any single number.</p>
+
+    <table class="data" style="margin-top:26px">
+      <caption>Published guidance, domestic United States</caption>
+      <thead><tr><th>Source</th><th>Recommended window</th><th>What they measure</th></tr></thead>
+      <tbody>
+        <tr><td>Google Flights historical fare analysis</td><td class="fig">38 days out</td><td>Search queries across all carriers; cheap zone roughly 28&ndash;61 days</td></tr>
+        <tr><td>Expedia 2026 Air Hacks Report</td><td class="fig">15&ndash;30 days</td><td>Expedia's own bookings, skewed toward leisure and package travel</td></tr>
+        <tr><td>Going</td><td class="fig">1&ndash;3 months</td><td>Curated route set, hunting outlier fares rather than averages</td></tr>
+        <tr><td><strong>Overlap of all three</strong></td><td class="fig"><strong>4&ndash;8 weeks</strong></td><td>The range no source disagrees with</td></tr>
+      </tbody>
+    </table>
+
+    <table class="data">
+      <caption>Published guidance, international</caption>
+      <thead><tr><th>Source or region</th><th>Recommended window</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td>Going, general international</td><td class="fig">2&ndash;8 months</td><td>Peak season needs the longer end</td></tr>
+        <tr><td>Expedia 2026, international economy</td><td class="fig">31&ndash;45 days</td><td>Reported $190 saving versus six months ahead</td></tr>
+        <tr><td>Europe from the US</td><td class="fig">3&ndash;5 months</td><td>Add two months for summer</td></tr>
+        <tr><td>Asia</td><td class="fig">4&ndash;6 months</td><td>Longer for cherry blossom season</td></tr>
+        <tr><td>Latin America and Caribbean</td><td class="fig">2&ndash;4 months</td><td>Longer over the winter holidays</td></tr>
+        <tr><td>Australia and New Zealand</td><td class="fig">5&ndash;9 months</td><td>Longest windows of any major region</td></tr>
+      </tbody>
+    </table>
+    <p class="src">Compiled from Going booking-window guidance, the Expedia 2026 Air Hacks Report, and aggregated fare analyses. Regional figures are published third-party guidance rather than our own measurements.</p>
+
+    <div class="cols2" style="margin-top:32px">
+      <div>
+        <h3>Why they disagree, properly explained</h3>
+        <p>They are not measuring the same thing, and once you see that the disagreement stops being confusing.</p>
+        <p><strong>Google Flights</strong> observes an enormous volume of searches across every carrier and route, including all the fares nobody bought. Its picture is the broadest and least filtered.</p>
+        <p><strong>Expedia</strong> observes its own completed bookings. That population skews toward leisure travellers, package buyers and people who booked reasonably late &mdash; which mechanically pulls its optimal window closer to departure.</p>
+        <p><strong>Going</strong> is not measuring averages at all. It watches a curated set of routes for unusually low fares. Its guidance describes where outliers appear, not where the mean sits.</p>
+        <p>So Expedia's shorter window and Google's longer one are not contradictory. They are answers to different questions.</p>
+      </div>
+      <div>
+        <h3>What everyone agrees on</h3>
+        <p>Three things, and they are worth more than the disagreement.</p>
+        <p><strong>Eleven months out is not cheapest.</strong> Airlines open booking around 330 days ahead, and every source agrees that the opening price is set before competition establishes the market rate. Booking the day the schedule opens is the most common expensive mistake among organised travellers.</p>
+        <p><strong>Inside two weeks is expensive.</strong> On flights, near-universally. The cheap buckets are gone.</p>
+        <p><strong>The middle holds the value.</strong> Every source puts its recommendation somewhere between roughly two weeks and five months, and the overlaps are narrow enough to be actionable.</p>
+        <p>That is why we publish an overlap window rather than picking a favourite study. It is the range that is defensible no matter which dataset you trust.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="wgwrap">
+  <div class="wg">
+    <span class="wg-label">Flights only</span><h2 class="wg-h">Watch the fare, not the calendar.</h2>
+    <div class="eg-widget" data-widget="search" data-program="us-expedia" data-lobs="flights"
+         data-network="pz" data-camref="1100l5QSrc" data-pubref="fhp-time-flights"></div>
+    <p class="wg-note">A real price today beats a rule of thumb about next month.</p>
+  </div>
+</div>
+<section class="band" id="myths">
+  <div class="wrap">
+    <span class="eyebrow on-dark">Measured, not asserted</span>
+    <h2>Three timing beliefs, and what the numbers actually show.</h2>
+
+    <div class="cols3" style="margin-top:30px">
+      <div class="card">
+        <span class="kv">Belief one</span>
+        <h3>Book on a Tuesday</h3>
+        <p>Google Flights measured shopping midweek instead of at the weekend as producing fares about <strong>1.9%</strong> cheaper. Expedia's 2026 report names <strong>Friday</strong> as cheapest, roughly 3% below Sunday.</p>
+        <p>Two sources, two different days, both effects tiny. The myth dates from when airlines filed fare sales by hand early in the week. Continuous automated pricing ended that years ago.</p>
+        <p><strong>Verdict:</strong> a rounding error. Book when you are ready.</p>
+      </div>
+      <div class="card">
+        <span class="kv">Belief two</span>
+        <h3>Prices drop at the last minute</h3>
+        <p>For flights, they rise. Cheap fare buckets sell out and are not replenished, so the final three weeks are structurally expensive on most routes.</p>
+        <p>For hotels, they often do fall &mdash; NerdWallet found booking 15 days out beat four months out 66% of the time, by about 13% on average. But that analysis covered 2019 to 2021, and travel patterns have shifted since.</p>
+        <p><strong>Verdict:</strong> true for rooms, false for seats, and a package is mostly governed by the seat.</p>
+      </div>
+      <div class="card">
+        <span class="kv">Belief three</span>
+        <h3>The travel day barely matters</h3>
+        <p>It is the largest lever on the page. Google data has put Monday to Wednesday departures around <strong>13%</strong> below weekend departures, and Tuesday, Wednesday and Saturday recur as the cheapest days to fly across independent analyses.</p>
+        <p>Thirteen percent against roughly two percent for the shopping day. If you move one variable, move this one.</p>
+        <p><strong>Verdict:</strong> the most underused saving in travel.</p>
+      </div>
+    </div>
+
+    <div class="answer" style="margin-top:32px">
+      <span class="q">What is the cheapest day of the week to fly?</span>
+      <p>Midweek. Google data has shown Monday through Wednesday departures running around 13% cheaper than weekend departures, and Tuesday, Wednesday and Saturday recur across independent analyses as the cheapest days to fly. This effect is roughly six times larger than any difference in the day you buy the ticket, which measures at about 2 to 3%. Shifting your departure day is the single most effective timing decision available to most travellers.</p>
+    </div>
+
+    <table class="data" style="margin-top:30px">
+      <caption>Timing levers ranked by measured effect</caption>
+      <thead><tr><th>Lever</th><th>Approximate effect</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>Travel day: midweek versus weekend</td><td class="fig">~13%</td><td>Google, 2025</td></tr>
+        <tr><td>Hotel: 15 days out versus 4 months</td><td class="fig">~13%</td><td>NerdWallet, 2,500+ rates, 2019&ndash;2021</td></tr>
+        <tr><td>Booking day: Friday versus Sunday</td><td class="fig">~3%</td><td>Expedia 2026 Air Hacks</td></tr>
+        <tr><td>Booking day: midweek versus weekend</td><td class="fig">~1.9%</td><td>Google Flights</td></tr>
+        <tr><td>Year-on-year airfare change, 2026</td><td class="fig">&minus;3.4%</td><td>NerdWallet Travel Price Index, BLS data</td></tr>
+      </tbody>
+    </table>
+    <p class="src">Effects are drawn from separate studies with different methodologies and are not directly comparable. They are listed together to show relative magnitude, not to be added.</p>
+  </div>
+</section>
+
+<section id="calendar">
+  <div class="wrap">
+    <span class="eyebrow">Working backwards</span>
+    <h2>Book in this month to travel in that one.</h2>
+    <p class="lede narrow">The classic rule of thumb &mdash; shop in the opposite season &mdash; is roughly right for peak travel, and roughly wrong for everything else. Here is the version that accounts for both.</p>
+
+    <table class="data" style="margin-top:26px">
+      <caption>When to shop, by travel period</caption>
+      <thead><tr><th>Travelling</th><th>Domestic: start looking</th><th>International: start looking</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Spring, off-peak</td><td>Late January</td><td>November</td><td>Low demand; the standard window applies</td></tr>
+        <tr><td>Summer, peak</td><td>February to March</td><td>December to January</td><td>Add two months to the standard window</td></tr>
+        <tr><td>Autumn, shoulder</td><td>July to August</td><td>May</td><td>The best value period of the year</td></tr>
+        <tr><td>Thanksgiving</td><td>June to August</td><td>January to July</td><td>Demand concentrated on a few dates</td></tr>
+        <tr><td>Christmas and New Year</td><td>July to September</td><td>February to August</td><td>Cheap inventory disappears and is not replaced</td></tr>
+        <tr><td>Spring break</td><td>October to December</td><td>September to November</td><td>Family travel clusters tightly</td></tr>
+      </tbody>
+    </table>
+    <p class="src">Derived by applying the published booking windows above to each travel period. Holiday guidance of three to five months domestic and four to ten months international comes from Going.</p>
+
+    <div class="cols2" style="margin-top:32px">
+      <div>
+        <h3>Why holidays genuinely reward booking early</h3>
+        <p>Holiday travel is the one case where the usual warning against booking too far ahead does not apply, and the reason is structural rather than seasonal.</p>
+        <p>On an ordinary Tuesday in March, demand is spread across many possible dates. If one flight fills, travellers shift to the next day and airlines respond by managing inventory across the whole period.</p>
+        <p>At Christmas, demand is concentrated on perhaps six specific dates. Nobody can shift. Cheap inventory on those dates sells out and is never replenished, so prices only travel in one direction. The same applies at Thanksgiving and to a lesser extent spring break.</p>
+        <p>This is also the period where the flight and hotel timing conflict matters least, because holiday hotel rates do not soften near arrival either. Everything is expensive late.</p>
+      </div>
+      <div>
+        <h3>And why shoulder season is the real answer</h3>
+        <p>None of this timing work compares to simply travelling when other people are not.</p>
+        <p>Autumn shoulder season &mdash; roughly late September into November in the northern hemisphere &mdash; carries most of the weather and a fraction of the price, on both halves of the trip simultaneously. Airfare is lower because demand is lower. Hotel rates are lower for the same reason. Neither effect requires you to guess a booking window correctly.</p>
+        <p>A perfectly timed booking in July might save you ten percent against a badly timed one. Moving the trip to October can save considerably more than that, and it does so without any monitoring, alerts or cleverness at all.</p>
+        <p>If you have any flexibility on when to travel, spend it there before you spend a single minute optimising when to buy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="destinations">
+  <div class="wrap">
+    <span class="eyebrow">Where you are going changes the answer</span>
+    <h2>Five destinations with genuinely different clocks.</h2>
+    <p class="lede narrow">General windows are a starting position. These are the cases where following the general advice will actively cost you money.</p>
+
+    <div class="cols2" style="margin-top:30px">
+      <div class="card win" style="margin-bottom:18px">
+        <span class="kv">Book much earlier than the rule</span>
+        <h3>Caribbean over the winter holidays</h3>
+        <p>The single most concentrated demand event in leisure travel. A narrow set of dates, a finite number of resort rooms, and an audience that largely cannot move its plans.</p>
+        <p>The general Latin America window of two to four months is wrong here. Treat late December as needing <strong>four to eight months</strong>, and understand that at the popular all-inclusives you are competing for availability rather than price. If the property matters more than the saving, book when the calendar opens.</p>
+      </div>
+      <div class="card win" style="margin-bottom:18px">
+        <span class="kv">Book much earlier than the rule</span>
+        <h3>Japan in cherry blossom season</h3>
+        <p>A two to three week window, forecast publicly, that draws visitors from every continent at once. Published guidance puts it at <strong>four to ten months</strong> ahead, against a normal Asia window of four to six.</p>
+        <p>The complication is that the bloom dates shift year to year and are not confirmed until close to the season, so you are booking a window rather than a date. That is a genuine risk and one worth accepting deliberately rather than by accident.</p>
+      </div>
+      <div class="card lose" style="margin-bottom:18px">
+        <span class="kv">Book later than the rule</span>
+        <h3>Las Vegas</h3>
+        <p>Room rates here are driven by the convention calendar rather than the season, and they swing more violently than almost anywhere in the United States. The same room can triple across two adjacent weeks with no seasonal logic at all.</p>
+        <p>That volatility rewards checking the calendar before fixing dates, and it makes fixed booking-window advice close to useless. Shift your dates by three days and you will frequently beat any timing strategy.</p>
+      </div>
+      <div class="card lose" style="margin-bottom:18px">
+        <span class="kv">Book later than the rule</span>
+        <h3>European city breaks outside summer</h3>
+        <p>Abundant accommodation, competitive short-haul routes and low seasonal concentration mean prices here are less time-sensitive than the three-to-five-month guidance suggests.</p>
+        <p>These trips also bundle poorly, for the reasons set out on our <a href="/when-to-book-flight-and-hotel-together/">page on when bundling wins</a>. Booking the two halves separately, later, is usually the better play.</p>
+      </div>
+      <div class="card win">
+        <span class="kv">A special case</span>
+        <h3>Ski resorts</h3>
+        <p>Mountain accommodation behaves unlike urban hotels. Inventory is genuinely limited, the season is short, and the good properties in the good weeks sell out rather than discounting.</p>
+        <p>Treat a ski package like a holiday booking &mdash; three to five months &mdash; and be aware that lift tickets, equipment and lessons sit outside the package entirely and want budgeting separately.</p>
+      </div>
+    </div>
+
+    <div class="answer" style="margin-top:32px">
+      <span class="q">Does the best booking time change by destination?</span>
+      <p>Substantially. Regional windows differ &mdash; Europe from the US around three to five months, Asia four to six, Latin America two to four, Australia and New Zealand five to nine. But specific events override the regional average entirely. The Caribbean over the winter holidays, Japan during cherry blossom season and ski resorts in peak weeks all need booking far earlier than their regional guidance suggests, because those are availability problems rather than pricing problems.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="monitoring">
+  <div class="wrap">
+    <span class="eyebrow on-dark">After you decide the window</span>
+    <h2>Watching prices is useful. Waiting for a floor is not.</h2>
+
+    <div class="cols2">
+      <div>
+        <p>There is a strategy that works and a habit that looks like the same thing and quietly costs money. Worth separating them.</p>
+        <p><strong>The strategy: decide your number first.</strong> Before you begin searching, work out what you would be content to pay. Not the lowest imaginable price &mdash; the price at which you would consider the trip good value and stop thinking about it. Then book when you see it.</p>
+        <p>This works because it converts an open-ended search with no stopping rule into a decision with one. Without it, every price you see becomes a reason to wait for a better one, and there is no point at which you conclude you have finished.</p>
+        <p><strong>The habit: waiting for the floor.</strong> Fares do not descend tidily toward a knowable minimum. They move in both directions on a schedule set by inventory systems nobody outside the airline can observe. The fare that was $420 this morning and $480 this afternoon has not told you anything about tomorrow.</p>
+        <p>The most expensive outcome in travel is not paying slightly above the optimum. It is watching a good fare disappear while waiting for a better one, then paying substantially more three weeks later.</p>
+      </div>
+      <div>
+        <h3>What monitoring is genuinely good for</h3>
+        <p><strong>Establishing what normal looks like.</strong> Two weeks of watching a route tells you whether $520 is high or low for it. That context is worth more than any published booking window, because it is specific to your trip.</p>
+        <p><strong>Catching genuine outliers.</strong> Fare alerts exist because occasional mistakes and sales produce prices far below the normal band. Those are worth being ready for.</p>
+        <p><strong>Refundable hotel rates.</strong> This is the one case where monitoring after booking pays. Book a refundable room early to secure the property, then check again closer to arrival. Given that hotel rates often soften late, rebooking at a lower rate is a real and low-risk option &mdash; and one that packages generally remove.</p>
+        <h3 style="margin-top:26px">What it is not good for</h3>
+        <p>Predicting the direction of a specific fare. Nobody outside the airline can do this, and the tools that claim to are producing confident-sounding output from the same public data you can see.</p>
+        <p>If a service tells you to wait with high confidence, treat that confidence as a marketing decision rather than a measurement.</p>
+      </div>
+    </div>
+
+    <div class="answer" style="margin-top:30px">
+      <span class="q">Should I wait for prices to drop before booking a vacation package?</span>
+      <p>Only if you are still outside your booking window. Once you are inside it, waiting is more likely to cost than save, because airfare tends to rise from that point as cheap fare buckets sell out. The practical method is to decide what you are content to pay before you start searching, then book when you see that number rather than waiting for a floor you cannot identify in advance. Prices move in both directions and no public tool can reliably predict which way a specific fare will go.</p>
+    </div>
+  </div>
+</section>
+<div class="wgwrap">
+  <div class="wg">
+    <span class="wg-label">Hotels only</span><h2 class="wg-h">Rooms follow a different clock.</h2>
+    <div class="eg-widget" data-widget="search" data-program="us-expedia" data-lobs="stays"
+         data-network="pz" data-camref="1100l5QSrc" data-pubref="fhp-time-stays"></div>
+    <p class="wg-note">Shorter booking windows, later discounting, and rates that expire nightly.</p>
+  </div>
+</div>
+<section class="band-soft" id="method">
+  <div class="wrap">
+    <span class="eyebrow">Method</span>
+    <h2>What we measured, and what we did not.</h2>
+    <div class="cols2">
+      <div>
+        <h3>We did not run a fare study</h3>
+        <p>Every number on this page comes from a named third party, with the organisation and where possible the date and sample attached. We have not tracked fares, we do not hold a price dataset, and we are not going to imply otherwise by writing in a way that suggests the findings are ours.</p>
+        <p>What we have done is read the major published sources, notice that they disagree, work out why, and publish the overlap. That synthesis is genuinely ours. The underlying measurements are not.</p>
+        <h3 style="margin-top:26px">The curve is a drawing</h3>
+        <p>The two-line chart near the top of this page illustrates directions the sources support &mdash; airfare falling then spiking, hotel rates continuing to fall. The exact curvature is drawn rather than plotted. We label it as illustrative on the page itself rather than in a footnote nobody reads.</p>
+      </div>
+      <div>
+        <h3>Known limitations</h3>
+        <p><strong>The NerdWallet hotel analysis covers 2019 to 2021.</strong> It is the most rigorous public comparison of advance versus last-minute hotel rates we could find, and it predates substantial changes in travel patterns. We cite it because it is the best available, and we flag the date because you should weigh it accordingly.</p>
+        <p><strong>Expedia's data describes Expedia's customers.</strong> We cite it and we also point out that this population skews toward leisure and package travel, which plausibly explains its shorter recommended window. We are an Expedia affiliate; that is disclosed on every page, and it does not change what the caveat should say.</p>
+        <p><strong>Averages hide enormous route-level variation.</strong> A window that is right on average can be wrong on your specific route in your specific week. Treat every figure here as a starting position rather than an instruction.</p>
+        <p><strong>None of it beats flexibility.</strong> Moving your dates outperforms timing your purchase, and we would rather say so than sell you a system.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="cols2">
+      <div>
+        <span class="eyebrow">Questions</span>
+        <h2>Timing, answered.</h2>
+        <p>Eighteen questions with sources attached. Where the honest answer is that nobody knows, that is what we say.</p>
+        <p>See also: <a href="/when-to-book-flight-and-hotel-together/">whether to bundle at all</a> and the <a href="/#calculator">bundle versus separate calculator</a>.</p>
+        <div style="margin-top:34px"><div class="bnwrap  bn-wide-skyscraper"><span class="bn-label">Advertisement</span><div class="eg-affiliate-banners" data-program="us-expedia" data-network="pz" data-layout="wide-skyscraper" data-image="resort" data-message="find-perfect-getaway-package" data-camref="1100l5QSrc" data-pubref="fhp-time-sky-faq" data-link="packages"></div></div></div>
+      </div>
+      <div>
+        <details><summary>When is the best time to book a vacation package?</summary><div class="ans"><p>Four to eight weeks before departure for domestic trips, three to five months for international. Those windows are where the published guidance from Google Flights, Expedia and Going overlaps, which makes them the most defensible ranges available given that the sources disagree with one another. Peak season and holiday travel need the longer end of each range, and in some cases more.</p></div></details>
+        <details><summary>Do flights and hotels have the same best booking time?</summary><div class="ans"><p>No, and this is the single most important thing to understand about package timing. Airfare generally falls until roughly five to six weeks before departure and then rises steeply as cheap fare buckets sell out. Hotel rates often behave the opposite way: Hotels.com&#x27;s 2026 Hotel Price Index identifies 8 to 14 days before travel as the sweet spot, and NerdWallet&#x27;s analysis of over 2,500 room rates found booking 15 days out was cheaper than four months out 66% of the time. The two components move in opposite directions.</p></div></details>
+        <details><summary>If flights and hotels peak at different times, when do I book the package?</summary><div class="ans"><p>Time the flight. Airfare rises more steeply and less predictably close to departure than hotel rates fall, and a sold-out fare bucket cannot be recovered while an unsold room usually can. Booking in the flight window means you accept a hotel price slightly above its theoretical floor, which is the smaller of the two losses. If your trip is genuinely flexible and the hotel is the dominant cost, booking separately and timing each half independently beats any package.</p></div></details>
+        <details><summary>How far in advance should I book a package for international travel?</summary><div class="ans"><p>Three to five months for most destinations, with regional variation: Europe from the US around three to five months, Asia four to six, Latin America two to four, and Australia or New Zealand five to nine. Add roughly two months for peak-season travel such as summer in Europe or the Caribbean over the winter holidays. Going&#x27;s guidance runs wider at two to eight months, which is compatible with these ranges rather than contradicting them.</p></div></details>
+        <details><summary>Is Tuesday the cheapest day to book?</summary><div class="ans"><p>No. Google Flights measured shopping on Tuesday, Wednesday or Thursday instead of a weekend as producing prices only about 1.9% cheaper on average. Expedia&#x27;s 2026 Air Hacks Report actually names Friday as the cheapest booking day, roughly 3% below Sunday, attributing the shift to reduced end-of-week business demand. The myth dates from an era when airlines filed fare sales manually early in the week; continuous automated pricing erased it years ago.</p></div></details>
+        <details><summary>What day of the week is cheapest to fly?</summary><div class="ans"><p>Midweek, and this matters far more than the day you book. Google data has put Monday to Wednesday departures around 13% cheaper than weekend departures, and Tuesday, Wednesday and Saturday recur across independent analyses as the cheapest days to fly. A 13% effect on the travel day dwarfs a 2% effect on the shopping day, so if you can only move one variable, move when you fly.</p></div></details>
+        <details><summary>Are last-minute vacation packages cheaper?</summary><div class="ans"><p>For the hotel half, sometimes. For the flight half, almost never. Airfares generally rise in the final three weeks as cheap fare buckets sell out, while hotel rates frequently soften close to arrival because an unsold room earns nothing. In a package these two effects work against each other, and the flight effect is usually larger, so last-minute packages are on balance a poor bet. The exception is genuine distressed inventory at a resort with rooms to fill.</p></div></details>
+        <details><summary>How far ahead do airlines start selling seats?</summary><div class="ans"><p>Most major US airlines open bookings around 330 days, or roughly eleven months, before departure. Being able to book that early does not mean you should. Prices at the opening of the window are set before competition has established a market rate, and every major dataset agrees that booking eleven months out is not the cheapest option. The competitive pricing that produces low fares needs time to develop.</p></div></details>
+        <details><summary>Why do the booking-window studies disagree with each other?</summary><div class="ans"><p>Because they measure different populations. Google Flights sees search queries across every carrier and route. Expedia sees its own bookings, which skew toward leisure and package travellers. Going watches a curated set of routes hunting for outlier fares rather than averages. None is wrong; they are describing different slices of the same market. A site that presents one as the definitive answer is either unaware of the others or hoping you are.</p></div></details>
+        <details><summary>What is the booking window for a hotel?</summary><div class="ans"><p>Shorter than most people expect, and shortening. SiteMinder reported the global average hotel booking window at 32.15 days in 2025, with Ireland the longest at 46 days. Hotels.com&#x27;s 2026 Hotel Price Index puts the value sweet spot at 8 to 14 days before travel. Hotels manage inventory that expires nightly, which pushes discounting late; airlines manage fare buckets that sell out, which pushes prices up late.</p></div></details>
+        <details><summary>Should I book a refundable rate and rebook if the price drops?</summary><div class="ans"><p>It is a reasonable strategy for hotels and a poor one for flights. A refundable room booked early costs a little more but lets you capture a drop if rates soften near arrival, which they often do. Airfare rarely falls in the final weeks, so waiting on a flight usually costs money. Within a package neither option is usually available, because the booking is a single contract governed by the stricter of the two components.</p></div></details>
+        <details><summary>When should I book for Christmas or Thanksgiving travel?</summary><div class="ans"><p>Three to five months ahead for domestic travel and four to ten months for international. Holiday travel is the case where booking early genuinely pays, because demand is concentrated on a handful of specific dates and cheap inventory disappears rather than being replenished. The common advice to book in the opposite season is a reasonable rule of thumb: shop for Christmas travel around July, and for summer travel around Christmas.</p></div></details>
+        <details><summary>Do vacation package prices drop after a certain date?</summary><div class="ans"><p>There is no reliable calendar date at which packages get cheaper. Package pricing follows the underlying inventory of both components, so it moves with the airline&#x27;s fare buckets and the hotel&#x27;s unsold rooms rather than to a schedule. What does exist is a window, roughly four to eight weeks out domestically, where both components are usually reasonably priced at once. That is a window, not a moment.</p></div></details>
+        <details><summary>Are airfares in 2026 higher or lower than last year?</summary><div class="ans"><p>Lower. Airfares in 2026 have been running around 3.4% below 2025 levels according to the NerdWallet Travel Price Index, which uses Bureau of Labor Statistics data. Analysts have also projected softer total travel demand, which generally means more unsold seats and more opportunities for fares to fall. That is a mild tailwind rather than a transformation.</p></div></details>
+        <details><summary>Does booking earlier ever cost more?</summary><div class="ans"><p>Frequently, and this surprises people. Airlines set opening prices before competitive pressure has established the market rate for a route, so fares eleven months out are often above what the same seat costs three months out. Hotels behave similarly, publishing rates far ahead that they later discount to fill rooms. Both the earliest and the latest ends of the booking timeline tend to be expensive; the value sits in the middle.</p></div></details>
+        <details><summary>How do I know if I have missed the best window?</summary><div class="ans"><p>You usually cannot know, and chasing certainty is how people miss good prices entirely. Fares do not descend tidily toward a knowable floor; they move in both directions on a schedule nobody outside the airline can see. The practical approach is to decide the price you would be content to pay before you start looking, and pay it when you see it. The most expensive habit in travel is refusing to book while waiting for slightly better.</p></div></details>
+        <details><summary>Does the booking window differ for all-inclusive resorts?</summary><div class="ans"><p>Somewhat. All-inclusive resorts sell a larger share of their inventory through packages and further ahead than city hotels, and popular properties during peak weeks genuinely do sell out. That pushes the sensible booking window earlier than the general hotel guidance would suggest. Treat all-inclusive peak season more like holiday flight timing: three to five months rather than the eight to fourteen days that suits an urban hotel.</p></div></details>
+        <details><summary>Is there any point checking prices after I book?</summary><div class="ans"><p>For hotels, yes, if you booked a refundable rate. For flights and packages, usually not, because the terms rarely let you act on what you find and the exercise mostly produces regret. If you do check and find a meaningful drop on a refundable hotel booking, rebooking is straightforward. Otherwise, the sensible move after booking is to stop looking.</p></div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:36px 0 54px;text-align:center">
+  <div class="wrap">
+    <p style="font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);margin-bottom:14px">Inside your window?</p>
+    <a class="btn" href="https://expedia.com/affiliates/eyetoad/home" target="_blank" rel="sponsored noopener">Open Expedia &#8599;</a>
+    <p class="src" style="max-width:60ch;margin:18px auto 0">Affiliate link. We may earn a commission on qualifying bookings, at no extra cost to you.</p>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>This site</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/when-to-book-flight-and-hotel-together/">When bundling saves money</a></li>
+          <li><a href="/how-to-book-flight-and-hotel-package/">How to book a package</a></li>
+          <li><a href="/all-inclusive-vs-flight-hotel-package/">All-inclusive vs build your own</a></li>
+          <li><a href="/best-time-to-book-vacation-packages/">The best time to book</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Book on Expedia</h4>
+        <ul>
+          <li><a href="https://expedia.com/affiliates/eyetoad/home" target="_blank" rel="sponsored noopener">Flights &amp; hotels &#8599;</a></li>
+          <li><a href="https://expedia.com/affiliates/eyetoad/home" target="_blank" rel="sponsored noopener">Vacation packages &#8599;</a></li>
+          <li><a href="https://expedia.com/affiliates/eyetoad/home" target="_blank" rel="sponsored noopener">Cars &amp; things to do &#8599;</a></li>
+        </ul>
+        <h4 style="margin-top:26px">Plan the trip</h4>
+        <ul>
+          <li><a href="https://howtosaveonvacations.com/">How to save on vacations</a></li>
+          <li><a href="https://bookvacationpackage.com/">Book a vacation package</a></li>
+          <li><a href="https://bookhotelandflights.com/">Book hotel and flights</a></li>
+          <li><a href="https://cheapflightshotel.com/">Cheap flights and hotels</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Where to go</h4>
+        <ul>
+          <li><a href="https://bestbeachesincostarica.com/">Costa Rica beaches</a></li>
+          <li><a href="https://bestsnorkelingbelize.com/">Snorkelling in Belize</a></li>
+          <li><a href="https://cabaretebeachdominicanrepublic.com/">Cabarete, Dominican Republic</a></li>
+          <li><a href="https://bestbeacheshawaii.com/">Hawaii beaches</a></li>
+          <li><a href="https://placestovisitincostarica.com/">Places to visit in Costa Rica</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Where to eat</h4>
+        <ul>
+          <li><a href="https://localfoodnearme.com/">Local Food Near Me</a></li>
+          <li><a href="https://bestrestaurantcolorado.com/">Colorado restaurants</a></li>
+          <li><a href="https://bestrestaurantsbelize.com/">Belize restaurants</a></li>
+          <li><a href="https://restauranthonolulu.com/">Honolulu restaurants</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disclose">Advertising disclosure: this site is a member of the Expedia Group affiliate programme. Search boxes and booking links on these pages are affiliate placements, and we may earn a commission on qualifying bookings made through them, at no additional cost to you. Commission does not influence what we publish &mdash; several sections of this site explain when a package is the wrong choice and tell you to book separately instead. Prices, availability and fees are set by Expedia and its suppliers, not by us, and change constantly. Always confirm the total price, the cancellation terms and the baggage allowance on the booking page before you pay. Booking-window and fare figures cited on this site are from named third-party research and carry their source and date.</p>
+    <div class="fbase">
+      <span>&copy; 2026 FLIGHTHOTELPACKAGE.COM</span>
+      <span>POWERED BY <a href="https://eyetoad.com/">EYETOAD.COM</a></span>
+    </div>
+  </div>
+</footer>
+<div class="sr-only"><h2>Fact sheet</h2><ul>
+<li>Airfare and hotel rates move in opposite directions as departure approaches: fares fall then spike, room rates continue falling.</li>
+<li>Google Flights historical data puts the cheapest domestic booking point around 38 days before departure, with a cheap zone of roughly 28 to 61 days.</li>
+<li>Expedia's 2026 Air Hacks Report identifies 15 to 30 days before departure as cheapest for domestic economy.</li>
+<li>Going recommends 1 to 3 months for domestic and 2 to 8 months for international travel.</li>
+<li>The overlap of major published sources is 4 to 8 weeks for domestic and 3 to 5 months for international.</li>
+<li>Hotels.com's 2026 Hotel Price Index identifies 8 to 14 days before travel as the hotel booking sweet spot.</li>
+<li>NerdWallet analysis of over 2,500 hotel rates found booking 15 days out beat four months out 66% of the time, averaging 13% less, across 2019 to 2021.</li>
+<li>SiteMinder reported the global average hotel booking window at 32.15 days in 2025.</li>
+<li>Within a package, time the flight rather than the hotel, because sold-out fare buckets cannot be recovered while unsold rooms usually can.</li>
+<li>Google Flights measured midweek booking as only about 1.9% cheaper than weekend booking.</li>
+<li>Expedia's 2026 report names Friday the cheapest booking day, roughly 3% below Sunday.</li>
+<li>Google data has shown Monday to Wednesday departures around 13% cheaper than weekend departures.</li>
+<li>Most major US airlines open bookings roughly 330 days before departure; booking at the opening is not the cheapest option.</li>
+<li>Airfares in 2026 have run approximately 3.4% below 2025 levels per the NerdWallet Travel Price Index using Bureau of Labor Statistics data.</li>
+<li>Holiday travel rewards early booking because demand concentrates on few dates and cheap inventory is not replenished.</li>
+</ul></div>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://flighthotelpackage.com/#publisher","name":"Flight Hotel Package","url":"https://flighthotelpackage.com/","parentOrganization":{"@type":"Organization","name":"Eye To Ad Media","url":"https://eyetoad.com/"}},{"@type":"WebSite","@id":"https://flighthotelpackage.com/#website","url":"https://flighthotelpackage.com/","name":"Flight Hotel Package","publisher":{"@id":"https://flighthotelpackage.com/#publisher"},"inLanguage":"en-US"},{"@type":"Article","@id":"https://flighthotelpackage.com/best-time-to-book-vacation-packages/#article","headline":"Best Time to Book Vacation Packages: What the Data Actually Says","description":"Flights get cheaper further out. Hotels get cheaper closer in. A package makes you buy both at once. The booking windows, the source disagreements, and a tool that gives you your own book-by date.","datePublished":"2026-08-11","dateModified":"2026-08-11","inLanguage":"en-US","isPartOf":{"@id":"https://flighthotelpackage.com/#website"},"publisher":{"@id":"https://flighthotelpackage.com/#publisher"},"author":{"@type":"Organization","name":"Flight Hotel Package","url":"https://flighthotelpackage.com/"},"mainEntityOfPage":{"@id":"https://flighthotelpackage.com/best-time-to-book-vacation-packages/#webpage"},"citation":[{"@type":"CreativeWork","name":"2026 Hotel Price Index","publisher":"Hotels.com, Expedia Group","datePublished":"2026-06"},{"@type":"CreativeWork","name":"2026 Air Hacks Report","publisher":"Expedia"},{"@type":"CreativeWork","name":"Hotel Booking Trends","publisher":"SiteMinder"},{"@type":"CreativeWork","name":"Travel Price Index","publisher":"NerdWallet"}]},{"@type":"WebPage","@id":"https://flighthotelpackage.com/best-time-to-book-vacation-packages/#webpage","url":"https://flighthotelpackage.com/best-time-to-book-vacation-packages/","name":"Best Time to Book Vacation Packages | What the Data Actually Says","description":"Flights get cheaper further out. Hotels get cheaper closer in. A package makes you buy both at once. The booking windows, the source disagreements, and a tool that gives you your own book-by date.","isPartOf":{"@id":"https://flighthotelpackage.com/#website"},"datePublished":"2026-08-11","dateModified":"2026-08-11","inLanguage":"en-US","speakable":{"@type":"SpeakableSpecification","cssSelector":[".aistrip p",".answer"]},"breadcrumb":{"@id":"https://flighthotelpackage.com/best-time-to-book-vacation-packages/#crumb"},"about":[{"@type":"Thing","name":"Airfare","sameAs":"https://en.wikipedia.org/wiki/Airfare"},{"@type":"Thing","name":"Yield management","sameAs":"https://en.wikipedia.org/wiki/Yield_management"},{"@type":"Thing","name":"Package tour","sameAs":"https://en.wikipedia.org/wiki/Package_tour"}]},{"@type":"BreadcrumbList","@id":"https://flighthotelpackage.com/best-time-to-book-vacation-packages/#crumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Flight Hotel Package","item":"https://flighthotelpackage.com/"},{"@type":"ListItem","position":2,"name":"Best time to book","item":"https://flighthotelpackage.com/best-time-to-book-vacation-packages/"}]},{"@type":"FAQPage","@id":"https://flighthotelpackage.com/best-time-to-book-vacation-packages/#faq","mainEntity":[{"@type":"Question","name":"When is the best time to book a vacation package?","acceptedAnswer":{"@type":"Answer","text":"Four to eight weeks before departure for domestic trips, three to five months for international. Those windows are where the published guidance from Google Flights, Expedia and Going overlaps, which makes them the most defensible ranges available given that the sources disagree with one another. Peak season and holiday travel need the longer end of each range, and in some cases more."}},{"@type":"Question","name":"Do flights and hotels have the same best booking time?","acceptedAnswer":{"@type":"Answer","text":"No, and this is the single most important thing to understand about package timing. Airfare generally falls until roughly five to six weeks before departure and then rises steeply as cheap fare buckets sell out. Hotel rates often behave the opposite way: Hotels.com's 2026 Hotel Price Index identifies 8 to 14 days before travel as the sweet spot, and NerdWallet's analysis of over 2,500 room rates found booking 15 days out was cheaper than four months out 66% of the time. The two components move in opposite directions."}},{"@type":"Question","name":"If flights and hotels peak at different times, when do I book the package?","acceptedAnswer":{"@type":"Answer","text":"Time the flight. Airfare rises more steeply and less predictably close to departure than hotel rates fall, and a sold-out fare bucket cannot be recovered while an unsold room usually can. Booking in the flight window means you accept a hotel price slightly above its theoretical floor, which is the smaller of the two losses. If your trip is genuinely flexible and the hotel is the dominant cost, booking separately and timing each half independently beats any package."}},{"@type":"Question","name":"How far in advance should I book a package for international travel?","acceptedAnswer":{"@type":"Answer","text":"Three to five months for most destinations, with regional variation: Europe from the US around three to five months, Asia four to six, Latin America two to four, and Australia or New Zealand five to nine. Add roughly two months for peak-season travel such as summer in Europe or the Caribbean over the winter holidays. Going's guidance runs wider at two to eight months, which is compatible with these ranges rather than contradicting them."}},{"@type":"Question","name":"Is Tuesday the cheapest day to book?","acceptedAnswer":{"@type":"Answer","text":"No. Google Flights measured shopping on Tuesday, Wednesday or Thursday instead of a weekend as producing prices only about 1.9% cheaper on average. Expedia's 2026 Air Hacks Report actually names Friday as the cheapest booking day, roughly 3% below Sunday, attributing the shift to reduced end-of-week business demand. The myth dates from an era when airlines filed fare sales manually early in the week; continuous automated pricing erased it years ago."}},{"@type":"Question","name":"What day of the week is cheapest to fly?","acceptedAnswer":{"@type":"Answer","text":"Midweek, and this matters far more than the day you book. Google data has put Monday to Wednesday departures around 13% cheaper than weekend departures, and Tuesday, Wednesday and Saturday recur across independent analyses as the cheapest days to fly. A 13% effect on the travel day dwarfs a 2% effect on the shopping day, so if you can only move one variable, move when you fly."}},{"@type":"Question","name":"Are last-minute vacation packages cheaper?","acceptedAnswer":{"@type":"Answer","text":"For the hotel half, sometimes. For the flight half, almost never. Airfares generally rise in the final three weeks as cheap fare buckets sell out, while hotel rates frequently soften close to arrival because an unsold room earns nothing. In a package these two effects work against each other, and the flight effect is usually larger, so last-minute packages are on balance a poor bet. The exception is genuine distressed inventory at a resort with rooms to fill."}},{"@type":"Question","name":"How far ahead do airlines start selling seats?","acceptedAnswer":{"@type":"Answer","text":"Most major US airlines open bookings around 330 days, or roughly eleven months, before departure. Being able to book that early does not mean you should. Prices at the opening of the window are set before competition has established a market rate, and every major dataset agrees that booking eleven months out is not the cheapest option. The competitive pricing that produces low fares needs time to develop."}},{"@type":"Question","name":"Why do the booking-window studies disagree with each other?","acceptedAnswer":{"@type":"Answer","text":"Because they measure different populations. Google Flights sees search queries across every carrier and route. Expedia sees its own bookings, which skew toward leisure and package travellers. Going watches a curated set of routes hunting for outlier fares rather than averages. None is wrong; they are describing different slices of the same market. A site that presents one as the definitive answer is either unaware of the others or hoping you are."}},{"@type":"Question","name":"What is the booking window for a hotel?","acceptedAnswer":{"@type":"Answer","text":"Shorter than most people expect, and shortening. SiteMinder reported the global average hotel booking window at 32.15 days in 2025, with Ireland the longest at 46 days. Hotels.com's 2026 Hotel Price Index puts the value sweet spot at 8 to 14 days before travel. Hotels manage inventory that expires nightly, which pushes discounting late; airlines manage fare buckets that sell out, which pushes prices up late."}},{"@type":"Question","name":"Should I book a refundable rate and rebook if the price drops?","acceptedAnswer":{"@type":"Answer","text":"It is a reasonable strategy for hotels and a poor one for flights. A refundable room booked early costs a little more but lets you capture a drop if rates soften near arrival, which they often do. Airfare rarely falls in the final weeks, so waiting on a flight usually costs money. Within a package neither option is usually available, because the booking is a single contract governed by the stricter of the two components."}},{"@type":"Question","name":"When should I book for Christmas or Thanksgiving travel?","acceptedAnswer":{"@type":"Answer","text":"Three to five months ahead for domestic travel and four to ten months for international. Holiday travel is the case where booking early genuinely pays, because demand is concentrated on a handful of specific dates and cheap inventory disappears rather than being replenished. The common advice to book in the opposite season is a reasonable rule of thumb: shop for Christmas travel around July, and for summer travel around Christmas."}},{"@type":"Question","name":"Do vacation package prices drop after a certain date?","acceptedAnswer":{"@type":"Answer","text":"There is no reliable calendar date at which packages get cheaper. Package pricing follows the underlying inventory of both components, so it moves with the airline's fare buckets and the hotel's unsold rooms rather than to a schedule. What does exist is a window, roughly four to eight weeks out domestically, where both components are usually reasonably priced at once. That is a window, not a moment."}},{"@type":"Question","name":"Are airfares in 2026 higher or lower than last year?","acceptedAnswer":{"@type":"Answer","text":"Lower. Airfares in 2026 have been running around 3.4% below 2025 levels according to the NerdWallet Travel Price Index, which uses Bureau of Labor Statistics data. Analysts have also projected softer total travel demand, which generally means more unsold seats and more opportunities for fares to fall. That is a mild tailwind rather than a transformation."}},{"@type":"Question","name":"Does booking earlier ever cost more?","acceptedAnswer":{"@type":"Answer","text":"Frequently, and this surprises people. Airlines set opening prices before competitive pressure has established the market rate for a route, so fares eleven months out are often above what the same seat costs three months out. Hotels behave similarly, publishing rates far ahead that they later discount to fill rooms. Both the earliest and the latest ends of the booking timeline tend to be expensive; the value sits in the middle."}},{"@type":"Question","name":"How do I know if I have missed the best window?","acceptedAnswer":{"@type":"Answer","text":"You usually cannot know, and chasing certainty is how people miss good prices entirely. Fares do not descend tidily toward a knowable floor; they move in both directions on a schedule nobody outside the airline can see. The practical approach is to decide the price you would be content to pay before you start looking, and pay it when you see it. The most expensive habit in travel is refusing to book while waiting for slightly better."}},{"@type":"Question","name":"Does the booking window differ for all-inclusive resorts?","acceptedAnswer":{"@type":"Answer","text":"Somewhat. All-inclusive resorts sell a larger share of their inventory through packages and further ahead than city hotels, and popular properties during peak weeks genuinely do sell out. That pushes the sensible booking window earlier than the general hotel guidance would suggest. Treat all-inclusive peak season more like holiday flight timing: three to five months rather than the eight to fourteen days that suits an urban hotel."}},{"@type":"Question","name":"Is there any point checking prices after I book?","acceptedAnswer":{"@type":"Answer","text":"For hotels, yes, if you booked a refundable rate. For flights and packages, usually not, because the terms rarely let you act on what you find and the exercise mostly produces regret. If you do check and find a meaningful drop on a refundable hotel booking, rebooking is straightforward. Otherwise, the sensible move after booking is to stop looking."}}]},{"@type":"HowTo","@id":"https://flighthotelpackage.com/best-time-to-book-vacation-packages/#howto","name":"How to time a vacation package booking","totalTime":"PT10M","step":[{"@type":"HowToStep","position":1,"name":"Identify your trip type","text":"Domestic trips use a four to eight week window. International trips use three to five months. Holiday and peak season travel needs the longer end of each range."},{"@type":"HowToStep","position":2,"name":"Time the flight, not the hotel","text":"Airfare rises more steeply near departure than hotel rates fall, so the flight is the component worth optimising inside a package."},{"@type":"HowToStep","position":3,"name":"Choose midweek travel days","text":"Monday to Wednesday departures have run around 13 percent cheaper than weekend departures, a far larger effect than the day you shop."},{"@type":"HowToStep","position":4,"name":"Decide your acceptable price before searching","text":"Fares move in both directions. Setting a target price in advance prevents the common error of waiting past a good fare."},{"@type":"HowToStep","position":5,"name":"Compare the package against the two components","text":"Price the flight and hotel separately and add any baggage fee, then compare against the package total before paying."}]}]}</script><script>
+function measureHeader(){var h=document.getElementById('hdr');
+  if(h){document.documentElement.style.setProperty('--hdr',h.getBoundingClientRect().height+'px');}}
+window.addEventListener('load',measureHeader);
+window.addEventListener('resize',measureHeader);
+measureHeader();
+var burger=document.getElementById('burger'),mobnav=document.getElementById('mobnav');
+burger.addEventListener('click',function(){
+  var open=mobnav.classList.toggle('open');
+  burger.setAttribute('aria-expanded',open?'true':'false');
+  burger.setAttribute('aria-label',open?'Close menu':'Open menu');
+  document.body.style.overflow=open?'hidden':'';
+  measureHeader();
+});
+mobnav.addEventListener('click',function(e){
+  if(e.target.tagName==='A'){mobnav.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+});
+
+/* ---------- animate the dual curve on first view ---------- */
+(function(){
+  var c=document.getElementById('curve'); if(!c) return;
+  if(!('IntersectionObserver' in window)){ c.classList.add('go'); return; }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ c.classList.add('go'); io.disconnect(); } });
+  },{threshold:.25});
+  io.observe(c);
+})();
+
+/* ---------- booking window finder ---------- */
+(function(){
+  var dep=document.getElementById('dep'); if(!dep) return;
+  var trip=document.getElementById('trip'),season=document.getElementById('season'),
+      ptype=document.getElementById('ptype');
+  var w=document.getElementById('fow'),dd=document.getElementById('fod'),
+      note=document.getElementById('fon'),bar=document.getElementById('fobar'),
+      bi=document.getElementById('fobari'),bu=document.getElementById('fobaru'),
+      sc=document.getElementById('foscale');
+
+  /* [minDays, maxDays] from the published overlap ranges */
+  var BASE={dom:[28,56],eur:[90,150],lat:[60,120],asi:[120,180],anz:[150,270]};
+  var LABEL={dom:'4 to 8 weeks',eur:'3 to 5 months',lat:'2 to 4 months',
+             asi:'4 to 6 months',anz:'5 to 9 months'};
+
+  function fmt(d){
+    return d.toLocaleDateString(undefined,{weekday:'short',day:'numeric',month:'short',year:'numeric'});
+  }
+  function addDays(d,n){ var x=new Date(d.getTime()); x.setDate(x.getDate()+n); return x; }
+
+  function run(){
+    if(!dep.value){ w.textContent='Pick a departure date'; dd.textContent='';
+      note.textContent=''; bar.hidden=true; sc.hidden=true; return; }
+    var d=new Date(dep.value+'T12:00:00');
+    if(isNaN(d.getTime())){ return; }
+    var today=new Date(); today.setHours(12,0,0,0);
+    var out=Math.round((d-today)/86400000);
+
+    var r=BASE[trip.value].slice();
+    var label=LABEL[trip.value];
+    var extra='';
+    if(season.value==='peak'){ r[0]+=60; r[1]+=60; extra=' Peak season adds roughly two months.'; }
+    if(season.value==='hol'){ r[0]+=60; r[1]+=90;
+      extra=' Holiday travel concentrates demand on a few dates, so cheap inventory sells out and is not replaced. Book at the long end.'; }
+    if(ptype.value==='ai' && season.value!=='off'){ r[0]=Math.max(r[0],90);
+      extra+=' All-inclusive resorts in peak periods genuinely sell out, so treat availability as the constraint rather than price.'; }
+
+    var openD=addDays(d,-r[1]), closeD=addDays(d,-r[0]);
+
+    if(out<0){ w.textContent='That date has passed'; dd.textContent=''; note.textContent='';
+      bar.hidden=true; sc.hidden=true; return; }
+
+    dd.textContent=fmt(openD)+'  \u2192  '+fmt(closeD);
+    bar.hidden=false; sc.hidden=false;
+    /* timeline spans from the earlier of (window opening) and (today) through to departure,
+       so a window already in the past still renders in the correct place */
+    var span=Math.max(out,r[1],1);
+    var left=Math.max(0,Math.min(98,(span-r[1])/span*100));
+    var width=Math.max(2,Math.min(100-left,(r[1]-r[0])/span*100));
+    bi.style.left=left+'%'; bi.style.width=width+'%';
+    bi.style.opacity=(out<r[0])?'0.32':'0.85';
+    bu.style.left=Math.max(0,Math.min(99.4,(span-out)/span*100))+'%';
+
+    if(out>r[1]){
+      w.textContent='Too early. Wait.';
+      note.innerHTML='You are <strong>'+out+' days</strong> out. The window for this trip opens in <strong>'+
+        (out-r[1])+' days</strong>. Booking now generally costs more, because airlines price the opening of the '+
+        'booking window before competition establishes a market rate.'+extra;
+    }else if(out>=r[0]){
+      w.textContent='You are in the window now';
+      note.innerHTML='You are <strong>'+out+' days</strong> out, inside the '+label+
+        ' range where the published sources overlap. Decide the price you are content to pay and book when you see it. '+
+        'The window closes in <strong>'+(out-r[0])+' days</strong>.'+extra;
+    }else if(out>=14){
+      w.textContent='Past the ideal window. Book soon.';
+      note.innerHTML='You are <strong>'+out+' days</strong> out, which is later than the '+label+
+        ' range for this trip. Airfare generally rises from here as cheap fare buckets sell out, so waiting '+
+        'is more likely to cost than save. Book at the first price you find acceptable.'+extra;
+    }else{
+      w.textContent='Inside two weeks. Book now.';
+      note.innerHTML='At <strong>'+out+' days</strong> out you are in the most expensive part of the flight timeline. '+
+        'Hotel rates may still soften, but in a package the fare dominates. If your dates are movable at all, '+
+        'moving them is worth more than any further searching.'+extra;
+    }
+  }
+  [dep,trip,season,ptype].forEach(function(el){
+    el.addEventListener('change',run); el.addEventListener('input',run);
+  });
+  run();
+})();
+
+</script>
+<script class="eg-widgets-script" src="https://creator.expediagroup.com/products/widgets/assets/eg-widgets.js"></script>
+<script class="eg-affiliate-banners-script" src="https://creator.expediagroup.com/products/banners/assets/eg-affiliate-banners.js"></script>
+</body>
+</html>
